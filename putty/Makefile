@@ -9,7 +9,6 @@ pull:
 
 run: stop
 	docker run -d \
-		--rm \
 		--restart always \
     		--name=putty \
     		-p 5800:5800 \
