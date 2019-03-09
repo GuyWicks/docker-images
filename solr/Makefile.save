@@ -35,18 +35,6 @@ mycores:
 	- sudo chown 8983:8983 mycores
 
 clean:
-	- sudo rm -rf mycores
+	- rm -rf mycores
 	- sudo mkdir mycores
-	- sudo chmod -R a+rw mycores
-
-commit:
-	curl http://localhost:8983/solr/my_collection/update --data '<commit/>' -H 'Content-type:text/xml; charset=utf-8'
-
-import:
-	curl http://localhost:8983/solr/my_collection/update -H "Content-Type: text/xml" --data-binary @data-load.xml
-
-delete:
-	curl http://localhost:8983/solr/my_collection/update --data '<delete><query>*:*</query></delete>' -H 'Content-type:text/xml; charset=utf-8'
-
-count:
-	curl http://localhost:8983/solr/my_collection/select?q=*:*
+	- sudo chmod 

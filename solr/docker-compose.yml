@@ -4,11 +4,13 @@ services:
     image: solr
     ports:
      - "8011:8983"
+     - "8983:8983"
     volumes:
-      - ./mycores:/opt/solr/server/solr/mycores
+      - mycores:/opt/solr/server/solr/mycores
+      #- ./mycores:/opt/solr/server/solr/mycores
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate
-      - wiki
+      - my_collection
 volumes:
-  data:
+  mycores:
